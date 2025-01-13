@@ -1,0 +1,268 @@
+* { box-sizing: border-box;}
+:root 
+{ --img:linear-gradient(rgba(0, 0, 255, .7), rgb(6, 6, 71));
+  --bg: navy;
+  --txt:orange;}
+html, body
+{ margin: 0;}
+nav 
+{ display: grid;
+  padding:0 10px 5px;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  text-align: center;
+  grid-gap: 5px;
+  grid-template-columns: auto auto;
+  background-color: navy;
+  border-bottom: .5em solid white;
+  border-radius:0 0 20px 20px;}
+nav header
+{ grid-column: 1 / span 2;
+  display:flex;
+  position: relative;
+  align-items: center}
+nav header img
+{ width: 55px;
+  height: 2.5em;
+  border-radius: 25%;
+  border: 3px solid rgba(237, 158, 13, .5);
+  margin:5px 0 0 0;}
+nav header img + h1 + img
+{ width:25px;
+  height: 20px;
+  border: none;
+  border-radius: 40%;
+  position: absolute;
+  right: 0;}
+nav header h1, [title = intro-box] h1
+{ margin:5px 0 0 5px;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  color:navy;
+  background-image: var(--bg);
+  border-radius: 5px;
+  box-shadow:0px 0px 5px white inset, 0px 0px 5px var(--txt) ;
+  padding:3px;
+  text-shadow:3px 0px 7px var(--txt), -3px 0px 7px var(--txt), 0px 4px 7px var(--txt);
+  letter-spacing: 5px;
+  line-height:1;}
+nav div
+{ font-size: 13px;
+  background: white;
+  color: var(--txt);
+  padding: 5px;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px white inset;
+  background-image: linear-gradient(white, rgba(0, 0, 255, .2));
+  letter-spacing: 5px;
+  text-transform:uppercase;
+  border-radius: 5px;}
+nav div:hover
+{ color: var(--bg);}
+[title = intro-box] 
+{ width: 95%;
+  padding: 11px;
+  font-size: 14px;
+  font-family: monospace;
+  box-shadow:2px 2px 11px rgb(4, 4, 71) inset;
+  border-radius: 1em;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;}
+[title=intro-box] img
+{ width: 50px;
+  border: 3px solid var(--txt);
+  border-radius: 10px;}
+[title=intro-box] h1
+{ background-image: var(--img);
+  background-color: navy;
+  border-radius: .5em;
+  width:fit-content;
+  margin: auto;
+  padding: 5px;}
+[title=intro-box] > p
+{ width: 350px;
+  margin:11px auto 25px;}
+[title=intro-box] div
+{ text-align: left;}
+[title=intro-box] div span
+{ background-image: var(--img);
+  padding: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 7px;
+  color: var(--txt);
+  background-color: var(--bg);
+  border-radius: .5em;}
+[title = intro-box] div p
+{ margin: 20px;}
+[title = intro-box] input
+{ padding: 5px;
+  background-color:rgba(0, 0, 128, .1) ;
+  border-width: 1px;
+  border-radius: 5px;
+  font-size: large;}
+section
+{ margin:0 auto;
+  width: 97%;}
+section [itemprop=messages], section [itemprop=files]
+{ padding:90px 0 150px 0;
+  display: flex;
+  background-image: linear-gradient(rgba(95, 157, 244, .5), white 170px);
+  min-height: 100vh;
+  flex-direction: column;
+  box-shadow: 2px 2px 11px rgb(4, 4, 71) inset;}
+section [itemprop=messages] > div, section [itemprop=messages] > p
+{ max-width: 75%;
+  padding: 7px;
+  margin:5px 15px 0 15px;
+  word-wrap:break-word;
+  position: relative;
+  align-self: flex-end;
+  font-size: small;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid rgba(4, 4, 71, .3);
+  background-color: rgba(4, 4, 71, .1);
+  color:var(--bg); 
+  border-radius: 15px;}
+section [itemprop=messages] > p
+{ align-self: flex-start;
+  color: rgb(4, 4, 71);
+  min-width: 125px;
+  padding-bottom: 45px;
+  border-color: rgba(250, 166, 10, .3);
+  background-color: rgba(250, 166, 10, .2);}
+section [itemprop=messages] > div > img, section [itemprop=messages] > div > video, 
+section [itemprop=messages] > div > audio, section [itemprop=messages] > div > object,
+section [itemprop=messages] > p > img,  section [itemprop=messages] > p > video, 
+section [itemprop=messages] > p > audio, section [itemprop=messages] > p > embed
+{ outline: none;
+  border-radius: .7em;
+  min-width: fit-content;
+  display: block;
+  max-height: 135px;
+  overflow:hidden;}
+section [itemprop=messages] > p span
+{ position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding:.5px 1.5px;
+  width: 100%;
+  outline: .2em solid white;
+  border-radius: 1em 1em 0 0;
+  background-color: white;}
+section [itemprop=messages] > p span img
+{ width: 25px;
+  margin: 1px;}
+section [itemprop=messages] form
+{ position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  border-top: .5em solid white;
+  background-image:var(--img);
+  background-color: var(--bg);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 1em 1em 0 0;
+  width: 100%; 
+  text-align: center;}
+section [itemprop=messages] form #form-area
+{ width: 93%;
+  display: grid;
+  grid-template-columns: 85% auto;
+  align-items:end;
+  text-align: left;
+  margin:13px auto 15px;}
+section [itemprop=messages] #form-area textarea
+{ margin:0;
+  padding: 5px 5px 5px 20px;
+  height: 35px;
+  min-height: 35px;
+  font-size: 17px;
+  font-family: Verdana;
+  border-radius: 10px;
+  width: 98%;}
+section [itemprop=messages] #form-area #icons-container
+{ display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 5px;
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;}
+section [itemprop=messages] #form-area #icons-container img
+{ width: 100%;
+  border-radius: 7px;
+  height:35px;
+  padding: 2px;
+  background-color:white;}
+section [itemprop=messages] form #form-area + span
+{ display: block;
+  color: var(--txt);
+  margin: auto auto 10px auto;
+  font-size: 12px;
+  letter-spacing: 1px;}
+/* File Server */
+#big { font-size: xx-large; }  
+section [itemprop=files]
+{ padding-left: 15px;
+  padding-right: 15px;
+  display: none;}
+section [itemprop=files] h1
+{ margin: 0;
+  font-weight: normal;
+  color: var(--bg);
+  font-size: 20px;}
+section [itemprop=files] h1::first-letter
+{ font-size: xx-large;}
+section [itemprop=files] form, section [itemprop=files] form div
+{ background-color:white;
+  width: 95%;
+  color: var(--bg);
+  margin:9px auto;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-shadow: 3px 0px 17px var(--bg);
+  border-radius: 11px;
+  padding:21px 40px;}
+section [itemprop=files] form p
+{ margin:0 0 12px 0;
+  font-size: large;}
+section [itemprop=files] form textarea
+{ padding:5px 5px 5px 11px;
+  width:70%;
+  height: 35px;
+  min-height: 35px;
+  vertical-align: middle;
+  color: var(--bg);
+  outline: none;
+  border: 1px solid var(--bg);
+  margin-left: 5px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  border-radius: 7px;}
+section [itemprop=files] form button
+{ display: block;
+  margin-top: 9px;
+  color: var(--txt);
+  font-size: 17px;
+  box-shadow: 3px 0px 17px var(--txt);
+  outline: 3px solid white;
+  background-color: var(--bg);
+  border-radius: 3px;}
+
+@media screen and (min-width:700px) {
+  nav { height:fit-content;}
+  nav + [title=intro-box]
+  { width:45%; font-size: large;}
+  section {width: 98.5%;}
+  nav + [itemprop=messages] { width: 35%;}
+  section [itemprop=messages] > div, section [itemprop=messages] > p 
+  { margin:1vh 15px 0 15px; max-width:65%;}
+  section [itemprop=messages] form {max-height: fit-content;}
+  section [itemprop=messages] form #form-area { width: 55%;}  
+  section [itemprop=messages] form div#voice-presenter { width:40%;}
+  section [itemprop=messages] #form-area #icons-container img { width: 75%;}
+  /*File Seerver */
+  section [itemprop=files] form {width: 50%;}
+}
